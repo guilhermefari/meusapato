@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+    <link rel="stylesheet" href="../index.css">
+    <title>Cadastro de Produto</title>
+    </head>
+    <body>
+        <div class="end">
+            <input type="button" value="Voltar ao menu" onclick="navigate('index.html')">
+            <input type="button" value="Cadastrar marca" onclick="navigate('marca.html')">
+        </div>
+        <script type="text/javascript" src="../index.js"></script>
+        <h1>Cadastro de Produto</h1>
+        <p>Preencha os campos abaixo:</p>
+        <form class="fields">
+            <div class="item-field">
+                <label>Nome do produto</label>
+                <input required>
+            </div>
+            <div class="item-field">
+                <label>Preço</label>
+                <input type="number" step="0.01" min="0" value="0.00" required>
+            </div>
+            <div class="item-field">
+                <label>Material</label>
+                <input required>
+            </div>
+            <div class="item-field">
+                <label>Público</label>
+                <select>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                    <option>Unissex</option>
+                </select>
+            </div>
+            <div class="item-field">
+                <label>Tipo de fechamento</label>
+                <select>
+                    <option>Cadarço</option>
+                    <option>Fivela</option>
+                    <option>Velcro</option>
+                </select>
+            </div>
+            <div class="item-field">
+                <label>Marca</label>
+                <select>
+                    <option>Selecione</option>
+                    <option>Naike</option>
+                    <option>Eisiks</option>
+                </select>
+            </div>
+            <input type="checkbox">
+            <label>Amortecedor</label>
+            <input type="checkbox">
+            <label>Palmilha anti-odor</label>
+            <div class="item-field">
+                <input type="submit">
+            </div>
+        </form>
+    </body>
+</html>

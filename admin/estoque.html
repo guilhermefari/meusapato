@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <head>
+    <link rel="stylesheet" href="../index.css">
+    <title>Cadastro de Estoque</title>
+    </head>
+    <body>
+        <div class="end">
+            <input type="button" value="Voltar ao menu" onclick="navigate('index.html')">
+            <input type="button" value="Cadastrar um produto" onclick="navigate('cad_produtos.html')">
+        </div>
+        <script type="text/javascript" src="../index.js"></script>
+        <h1>Cadastro de Estoque</h1>
+        <p>Preencha os campos abaixo:</p>
+        <form class="fields">
+            <div class="item-field">
+                <label>ID do produto</label>
+                <input type="number" required>
+            </div>
+            <div class="item-field">
+                <label>Numeração</label>
+                <input type="number" min="0" required>
+            </div>
+            <div class="item-field">
+                <label>Cor</label>
+                <input required>
+            </div>
+            <div class="item-field">
+                <label>Quantidade</label>
+                <input type="number" min="0" required>
+            </div>
+            <div class="item-field">
+                <input type="submit">
+            </div>
+        </form>
+    </body>
+</html>
