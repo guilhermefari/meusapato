@@ -1,0 +1,1 @@
+const navigate = (location) => document.location=`${location}`
