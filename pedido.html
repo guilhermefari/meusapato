@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <head>
+    <link rel="stylesheet" href="index.css">
+    <title>Pedido</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="index.js"></script>
+        <div class="end">
+            <input type="button" value="Voltar aos produtos" onclick="navigate('produtos.html')">
+        </div>
+        <h1>Carrinho</h1>
+        <p>Você está quase lá! Aqui estão os seus produtos:</p>
+        <div>
+            <h3>Tênis Naike R1</h3>
+            <h2>R$129,90</h2>
+            <p>Cor: Vermelho</p>
+            <p>Tamanho: 42</p>
+            <p>-----------------------------------------------</p>
+        </div>
+        <div>
+            <h3>Total:</h3>
+            <h2>R$129,90</h2>
+        </div>
+        <h3>Selecione o endereço de entrega:</h3>
+        <input type="checkbox" checked="true" onclick="displayAddress()" id="displayAddress">
+        <form>
+
+            <label>Usar meu endereço cadastrado</label>
+            <div id="endereco-alternativo" style="display: none">
+            <label>Insira o endereço da entrega:</label>
+            <div class="item-field">
+                <label>Logradouro</label>
+                <input required>
+            </div>
+            <div class="item-field">
+                <label>Número</label>
+                <input type="number" required min="0"> 
+            </div>
+            <div class="item-field">
+                <label>Complemento</label>
+                <input>
+            </div>
+            <div class="item-field">
+                <label>Cidade</label>
+                <input required>
+            </div>
+            <div class="item-field">
+                <label>Estado</label>
+                <select>
+                    <option>Acre</option>
+                    <option>Alagoas</option>
+                    <option>Amapá</option>
+                    <option>Amazonas</option>
+                    <option>Bahia</option>
+                    <option>Ceará</option>
+                    <option>Espírito Santo</option>
+                    <option>Goiás</option>
+                    <option>Maranhão</option>
+                    <option>Mato Grosso</option>
+                    <option>Mato Grosso do Sul</option>
+                    <option>Minas Gerais</option>
+                    <option>Pará</option>
+                    <option>Paraíba</option>
+                    <option>Paraná</option>
+                    <option>Pernambuco</option>
+                    <option>Piauí</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Rio Grande do Sul</option>
+                    <option>Rondônia</option>
+                    <option>Roraima</option>
+                    <option>Santa Catarina</option>
+                    <option>São Paulo</option>
+                    <option>Sergipe</option>
+                    <option>Tocantins</option>
+                    <option>Feminino</option>
+                    <option>Distrito Federal</option>
+                </select>
+                <div class="item-field">
+                    <label>Nome associado a este endereço:</label>
+                    <input required>
+                </div>
+            </div>
+        </div>
+        <div class="item-field">
+            <input type="submit" value="Concluir pedido">
+        </div>
+    </form>
+    </div>
+    </body>
+</html>
