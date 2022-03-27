@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+    <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="index.css">
+    <title>Cadastro de Clientes</title>
+    </head>
+    <body>
+        <div class="end">
+            <input type="button" value="Voltar ao menu" onclick="navigate('index.html')">
+        </div>
+            <script type="text/javascript" src="index.js"></script>
+        <h1>Cadastro de Cliente</h1>
+        <p>Preencha os campos abaixo:</p>
+        <form class="fields" method="post" action="controller/cad_cliente.php">
+            <div class="item-field">
+                <label>Nome Completo</label>
+                <input name="nome" required>
+            </div>
+            <div class="item-field">
+                <label>CPF</label>
+                <input name="CPF" required>
+            </div>
+            <div class="item-field">
+                <label>Sexo</label>
+                <select name="sexo">
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="N">Não binárie</option>
+                </select>
+            </div>
+            <div class="item-field">
+                <label>Email</label>
+                <input name="email" required>
+            </div>
+            <div class="item-field">
+                <label>Senha</label>
+                <input name="senha" type="password" required>
+            </div>
+            <div class="item-field">
+                <label>Telefone</label>
+                <input name="telefone" required>
+            </div>
+            <h3>Endereço</h3>
+            <div class="item-field">
+                <label>Logradouro</label>
+                <input name="logradouro" required>
+            </div>
+            <div class="item-field">
+                <label>Número</label>
+                <input name="numero" type="number" required min="0"> 
+            </div>
+            <div class="item-field">
+                <label>Complemento</label>
+                <input name="complemento">
+            </div>
+            <div class="item-field">
+                <label>Cidade</label>
+                <input name="cidade" required>
+            </div>
+            <div class="item-field">
+                <label>Estado</label>
+                <select name="estado">
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Nprte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+                <div class="item-field">
+                    <label>CEP:</label>
+                    <input name="CEP" required>
+                </div>
+                <div class="item-field">
+                    <label>Nome associado a este endereço:</label>
+                    <input name="nome_associado" required>
+                </div>
+            </div>
+            <div class="item-field">
+                <input type="submit">
+            </div>
+        </form>
+    </body>
+</html>
