@@ -1,5 +1,5 @@
 <?php
-    require_once "../../classes/produto.php";
+    require_once "../../classes/Produto.php";
     $produtoServer = new Produto();
     $nome = $_POST["nome"];
     $preco = $_POST["preco"];

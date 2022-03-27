@@ -44,7 +44,7 @@
                 <label>Marca</label>
                 <select name="marca">
                     <?php
-                        require_once "../classes/marca.php";
+                        require_once "../classes/Marca.php";
                         $marcaServer = new Marca();
                         $result = $marcaServer->buscarMarcas();
                         while($row = pg_fetch_row($result)){

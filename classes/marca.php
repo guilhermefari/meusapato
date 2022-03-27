@@ -3,7 +3,7 @@
 		private $conn;
 		
 		function __construct() {
-			$this->conn = require "../bd/connection.php";
+			$this->conn = require_once 'connection.php';
 		}
 		
 		function cadastrarMarca($nome){ //Cadastra a marca e retorna o id
