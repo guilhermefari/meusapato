@@ -12,22 +12,31 @@
         <script type="text/javascript" src="../index.js"></script>
         <h1>Cadastro de Estoque</h1>
         <p>Preencha os campos abaixo:</p>
-        <form class="fields">
+        <form class="fields" method="post" action="controller/cad_estoque.php">
             <div class="item-field">
-                <label>ID do produto</label>
-                <input type="number" required>
+                <label>Produto</label>
+                <select name="produto">
+                    <?php
+                        require_once "../classes/Produto.php";
+                        $produtoServer = new Produto();
+                        $result = $produtoServer->buscarProdutos();
+                        while($row = pg_fetch_row($result)){
+                            echo "<option value=".$row[0].">".$row[1]."</option>";
+                        }
+                    ?>
+                </select>
             </div>
             <div class="item-field">
                 <label>Numeração</label>
-                <input type="number" min="0" required>
+                <input name="numeracao" type="number" min="0" required>
             </div>
             <div class="item-field">
                 <label>Cor</label>
-                <input required>
+                <input name="cor" required>
             </div>
             <div class="item-field">
                 <label>Quantidade</label>
-                <input type="number" min="0" required>
+                <input name="quantidade" type="number" min="0" required>
             </div>
             <div class="item-field">
                 <input type="submit">
