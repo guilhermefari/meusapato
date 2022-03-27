@@ -3,7 +3,7 @@
 		private $conn;
 		
 		function __construct() {
-			$this->conn = require "../bd/connection.php";
+			$this->conn = require "connection.php";
 		}
 		
 		function cadastrarProduto($nome, $preco, $material, $publico, $tipoFechamento, $id_marca, $amortecedor, $palmilhaAntiOdor){ //Cadastra a Produto e retorna o código
