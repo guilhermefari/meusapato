@@ -33,7 +33,7 @@
 		
 		function buscarEstoqueProduto($idProduto){
 			$sql = "SELECT * FROM estoque_produto WHERE id_produto=$1";
-			$result = pg_query($this->conn, $sql);
+			$result = pg_query_params($this->conn, $sql, array($idProduto));
 			return $result;
 		}
 	}

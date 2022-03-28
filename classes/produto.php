@@ -32,5 +32,18 @@
 			$result = pg_query($this->conn, $sql);
 			return $result;
 		}
+
+		function contarProdutos(){ //retorna a quantidade de produtos cadastrados
+			$result = pg_query($this->conn, "SELECT COUNT(codigo) FROM produto");
+			$row = pg_fetch_row ($result);
+			return $row[0];
+		}
+
+		function buscarProdutosComMarca(){
+			$sql = "SELECT codigo, produto.nome, material, publico, tipo_fechamento, tem_amortecedor, tem_palmilha_antiodor, marca.nome AS marca, preco
+			FROM produto INNER JOIN marca ON produto.id_marca = marca.id";
+			$result = pg_query($this->conn, $sql);
+			return $result;
+		}
 	}
 ?>
