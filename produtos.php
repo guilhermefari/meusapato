@@ -8,11 +8,13 @@
     <body>
         <script type="text/javascript" src="index.js"></script>
         <div class="end">
-            <input type="button" value="Voltar ao menu" onclick="navigate('index.html')">
-            <input type="button" value="Finalizar compra" onclick="navigate('pedido.html')">
+            <input type="button" class='btn btn-primary' value="Voltar ao menu" onclick="navigate('index.html')">
+            <input type="button" class='btn btn-primary' value="Finalizar compra" onclick="navigate('pedido.html')">
         </div>
-        <h1>Produtos Disponíveis</h1>
-        <p>Para adicionar ao carrinho, marque o item que deseja</p>
+        <div class="separate">
+            <h1>Produtos Disponíveis</h1>
+            <p>Para adicionar ao carrinho, marque o item que deseja.</p>
+        </div>
         <div class="cards">
             <nav>
                 <ul class="pagination justify-content-center">
@@ -46,22 +48,40 @@
                 $cont = 1;
                 while($row = pg_fetch_row($produtos)){
                     if($cont > $pagAnterior*$produtosPorPagina && $cont <= $pagAtual*$produtosPorPagina){
-                        echo "<b><p>{$row[1]}</p></b>"; //adicionar demais especificações técnicas
-                        echo "<p>Marca: {$row[7]}</p>";
-                        echo "<p>Material: {$row[2]}</p>";
-                        echo "<p>Público: {$row[3]}</p>";
-                        echo "<p>Tipo de fechamento: {$row[4]}</p>";
-                        echo "<p>Tem amortecedor: {$row[5]}</p>";
-                        echo "<p>Tem palmilha anti-odor: {$row[6]}</p>";
-
-                        echo "<p>Preço: {$row[8]}</p>";
-
                         require_once "classes/EstoqueProduto.php";
                         $estoqueServer = new EstoqueProduto();
                         $estoqueItens = $estoqueServer->buscarEstoqueProduto($row[0]);
 
-                        if(pg_num_rows($estoqueItens) == 0) echo "<p>Produto indisponível</p>";
-                        else echo "<p>Escolha o modelo desejado:</p>";
+                        
+                        echo "<div class='card separate'>";
+                        echo "<h3>{$row[1]}</h3>";
+                        
+                        $preco = $row[8]/100;
+                        echo "<h3>{$preco}</h3>";
+                        
+                        if(pg_num_rows($estoqueItens) == 0) echo "<div class='alert alert-danger' role='alert'>Produto indisponível</div>";
+
+                        echo "<p>Marca: {$row[7]}</p>";
+                        echo "<p>Material: {$row[2]}</p>";
+                        echo "<p>Público: {$row[3]}</p>";
+                        echo "<p>Tipo de fechamento: {$row[4]}</p>";
+
+                        if($row[5]){
+                            echo "<div style='display: flex'>";
+                                echo "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-check' color='green' viewBox='0 0 16 16'>
+                                <path d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/>
+                                </svg>";
+                                echo "<p>Amortecedor</p>";
+                            echo "</div>";
+                        }
+                        if($row[6]){
+                            echo "<div style='display: flex'>";
+                                echo "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-check' color='green' viewBox='0 0 16 16'>
+                                <path d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/>
+                                </svg>";
+                                echo "<p>Palmilha anti-odor</p>";
+                            echo "</div>";
+                        }
                         
                         while($itemEstoque = pg_fetch_row($estoqueItens)){
                             $tamanho = $itemEstoque[2];
@@ -73,72 +93,12 @@
                                 </label>
                             </div>";
                         }
+                        echo "</div>";
                     }
 
                     $cont++;
                 }
             ?>
 
-            <div class="card">
-                <div class="modelos">
-                    <div class="card-modelo">
-                        <input type="checkbox">
-                        <p>Cor: Vermelho</p>
-                    </div>
-                    <div class="card-modelo">
-                        <input type="checkbox">
-                        <p>Cor: Verde</p>
-                    </div>
-                    <div class="card-modelo">
-                        <input type="checkbox">
-                        <p>Cor: Azul</p>
-                    </div>
-                </div>
-                <div class="modelos">
-                    <div class="card-modelo">
-                        <input type="checkbox">
-                        <p>40</p>
-                    </div>
-                    <div class="card-modelo">
-                        <input type="checkbox">
-                        <p>41</p>
-                    </div>
-                    <div class="card-modelo">
-                        <input type="checkbox">
-                        <p>42</p>
-                    </div>
-                </div>
-                <h2>Tênis Naike R1</h2>
-                <h2>R$129,90</h2>
-                <h4>Especificações Técnicas</h4>
-                <p>Material: Borracha</p>
-                <p>Público: Masculino</p>
-                <p>Tipo de fechamento: Cadarço</p>
-                <p>Possui amortecedor de impacto: Sim</p>
-                <p>Palmilha anti-odor: Não</p>
-            </div>
-            <div class="card">
-                <input type="checkbox">
-                <h2>Tênis Eizics M97</h2>
-                <h2>R$178,80</h2>
-                <h4>Especificações Técnicas</h4>
-                <p>Material: Borracha</p>
-                <p>Público: Masculino</p>
-                <p>Tipo de fechamento: Cadarço</p>
-                <p>Possui amortecedor de impacto: Sim</p>
-                <p>Palmilha anti-odor: Não</p>
-            </div>
-            <div class="card">
-                <input type="checkbox">
-                <h2>Tênis Eizics M45</h2>
-                <h2 class="indisponivel">Produto indisponível</h2>
-                <h4>Especificações Técnicas</h4>
-                <p>Material: Borracha</p>
-                <p>Público: Masculino</p>
-                <p>Tipo de fechamento: Cadarço</p>
-                <p>Possui amortecedor de impacto: Sim</p>
-                <p>Palmilha anti-odor: Não</p>
-            </div>
-        </div>
     </body>
 </html>

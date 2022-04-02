@@ -6,25 +6,12 @@ h1 {
     color: red;
 }
 
-.card{
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 10px;
-}
 .end{
     float: right
 }
 
 .modelos{
     display: flex;
-}
-
-.card-modelo{
-    padding-right: 10px;
-    padding-left: 10px;
 }
 
 .center{
@@ -40,4 +27,9 @@ margin: auto;
 
 .item-field{
     margin-top: 10px;
+}
+
+.separate{
+    margin: 20px;
+    padding: 20px;
 }
