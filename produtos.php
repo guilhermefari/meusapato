@@ -11,11 +11,11 @@
             <input type="button" class='btn btn-primary' value="Voltar ao menu" onclick="navigate('index.html')">
             <input type="button" class='btn btn-primary' value="Finalizar compra" onclick="navigate('pedido.html')">
         </div>
-        <div class="separate">
-            <h1>Produtos Disponíveis</h1>
-            <p>Para adicionar ao carrinho, marque o item que deseja.</p>
-        </div>
-        <div class="cards">
+        <div class="container">
+            <div class="separate">
+                <h1>Produtos Disponíveis</h1>
+                <p>Para adicionar ao carrinho, marque o item que deseja.</p>
+            </div>
             <nav>
                 <ul class="pagination justify-content-center">
                     <?php 
@@ -28,16 +28,15 @@
                         $pagAnterior = $pagAtual-1;
                         $proxPagina = $pagAtual+1;
 
-                        if($pagAtual == 1) echo '<li class="page-item disabled">';
-                        else echo '<li class="page-item">';
-                        echo "<a class='page-link' href='produtos.php?page={$pagAnterior}' tabindex='1'>Anterior</a></li>";
+                        echo ($pagAtual == 1) ? '<li class="page-item disabled">' : '<li class="page-item">';
 
+                        echo "<a class='page-link' href='produtos.php?page={$pagAnterior}' tabindex='1'>Anterior</a></li>";
                         for($i = 1; $i <= $nPags; $i++){
                             echo "<li class='page-item'><a class='page-link' href='produtos.php?page={$i}'>{$i}</a></li>";
                         }
-
-                        if($pagAtual == $nPags) echo '<li class="page-item disabled">';
-                        else echo '<li class="page-item">';
+    
+                        echo ($pagAtual == $nPags) ? '<li class="page-item disabled">' : '<li class="page-item">';
+                        
                         echo "<a class='page-link' href='produtos.php?page={$proxPagina}' tabindex='1'>Próxima</a></li>";
                     ?>
                 </ul>
@@ -96,8 +95,22 @@
                     }
 
                     $cont++;
-                }
+                }    
             ?>
+            <ul class="pagination justify-content-center">
+                <?php
+                    echo ($pagAtual == 1) ? '<li class="page-item disabled">' : '<li class="page-item">';
+
+                    echo "<a class='page-link' href='produtos.php?page={$pagAnterior}' tabindex='1'>Anterior</a></li>";
+                    for($i = 1; $i <= $nPags; $i++){
+                        echo "<li class='page-item'><a class='page-link' href='produtos.php?page={$i}'>{$i}</a></li>";
+                    }
+
+                    echo ($pagAtual == $nPags) ? '<li class="page-item disabled">' : '<li class="page-item">';
+
+                    echo "<a class='page-link' href='produtos.php?page={$proxPagina}' tabindex='1'>Próxima</a></li>";
+                ?>
+            </ul>
 
     </body>
 </html>
