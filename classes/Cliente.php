@@ -32,5 +32,11 @@
 			$result = pg_query($this->conn, $sql);
 			return $result;
 		}
+
+		function login($email, $senha){
+			$sql = "SELECT * FROM cliente WHERE email=$1 AND senha=$2";
+			$result = pg_query_params($this->conn, $sql, array($email, $senha));
+			return $result;
+		}
 	}
 ?>

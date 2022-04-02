@@ -8,7 +8,7 @@
     <body>
         <script type="text/javascript" src="index.js"></script>
         <div class="end">
-            <input type="button" class='btn btn-primary' value="Voltar ao menu" onclick="navigate('index.html')">
+            <input type="button" class='btn btn-primary' value="Voltar ao menu" onclick="navigate('index.php')">
             <input type="button" class='btn btn-primary' value="Finalizar compra" onclick="navigate('pedido.html')">
         </div>
         <div class="container">

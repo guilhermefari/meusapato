@@ -37,3 +37,9 @@ margin: auto;
 .color-bg{
     background-color: ghostwhite;
 }
+
+.centering{
+    margin: auto;
+    width: 50%;
+    padding: 70px 0;
+}
