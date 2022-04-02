@@ -52,12 +52,11 @@
                         $estoqueServer = new EstoqueProduto();
                         $estoqueItens = $estoqueServer->buscarEstoqueProduto($row[0]);
 
-                        
-                        echo "<div class='card separate'>";
+                        echo "<div class='card separate color-bg'>";
                         echo "<h3>{$row[1]}</h3>";
                         
                         $preco = $row[8]/100;
-                        echo "<h3>{$preco}</h3>";
+                        echo "<h3>R$ {$preco}</h3>";
                         
                         if(pg_num_rows($estoqueItens) == 0) echo "<div class='alert alert-danger' role='alert'>Produto indisponível</div>";
 

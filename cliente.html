@@ -1,104 +1,124 @@
 <!DOCTYPE html>
     <head>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
     <title>Cadastro de Clientes</title>
     </head>
     <body>
         <div class="end">
-            <input type="button" value="Voltar ao menu" onclick="navigate('index.html')">
+            <input type="button" class='btn btn-primary' value="Voltar ao menu" onclick="navigate('index.html')">
         </div>
-            <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        
         <h1>Cadastro de Cliente</h1>
-        <p>Preencha os campos abaixo:</p>
-        <form class="fields" method="post" action="controller/cad_cliente.php">
-            <div class="item-field">
-                <label>Nome Completo</label>
-                <input name="nome" required>
-            </div>
-            <div class="item-field">
-                <label>CPF</label>
-                <input name="CPF" required>
-            </div>
-            <div class="item-field">
-                <label>Sexo</label>
-                <select name="sexo">
-                    <option value="M">Masculino</option>
-                    <option value="F">Feminino</option>
-                    <option value="N">Não binárie</option>
-                </select>
-            </div>
-            <div class="item-field">
-                <label>Email</label>
-                <input name="email" required>
-            </div>
-            <div class="item-field">
-                <label>Senha</label>
-                <input name="senha" type="password" required>
-            </div>
-            <div class="item-field">
-                <label>Telefone</label>
-                <input name="telefone" required>
-            </div>
-            <h3>Endereço</h3>
-            <div class="item-field">
-                <label>Logradouro</label>
-                <input name="logradouro" required>
-            </div>
-            <div class="item-field">
-                <label>Número</label>
-                <input name="numero" type="number" required min="0"> 
-            </div>
-            <div class="item-field">
-                <label>Complemento</label>
-                <input name="complemento">
-            </div>
-            <div class="item-field">
-                <label>Cidade</label>
-                <input name="cidade" required>
-            </div>
-            <div class="item-field">
-                <label>Estado</label>
-                <select name="estado">
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Nprte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select>
-                <div class="item-field">
-                    <label>CEP:</label>
-                    <input name="CEP" required>
+        <form method="post" action="controller/cad_cliente.php">
+            <div class="form-group container color-bg">
+                <p>Preencha os campos abaixo:</p>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label for="nomeCompleto">Nome Completo</label>
+                        <input class="form-control" name="nome" required>
+                    </div>
+                    <div class="col-xs-3">
+                        <label>CPF</label>
+                        <input class="form-control" name="CPF" required>
+                    </div>
+                    <div  class="col-xs-3">
+                        <label>Sexo</label>
+                        <select class="form-control" name="sexo">
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="N">Não binárie</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="item-field">
-                    <label>Nome associado a este endereço:</label>
-                    <input name="nome_associado" required>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label>Email</label>
+                        <input class="form-control" type="email" name="email" required>
+                    </div>
+                    <div  class="col-xs-3">
+                        <label>Senha</label>
+                        <input class="form-control" name="senha" type="password" required>
+                    </div>
+                    <div class="col-xs-3">
+                        <label>Telefone</label>
+                        <input class="form-control" name="telefone" required>
+                    </div>
                 </div>
-            </div>
-            <div class="item-field">
-                <input type="submit">
+
+                <div class="row">
+                    <h3>Endereço</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label>Logradouro</label>
+                        <input class="form-control" name="logradouro" required>
+                    </div>
+                    <div  class="col-xs-2">
+                        <label>Número</label>
+                        <input class="form-control" name="numero" type="number" required min="0"> 
+                    </div>
+                    <div  class="col-xs-2">
+                        <label>Complemento</label>
+                        <input class="form-control" name="complemento">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label>Cidade</label>
+                        <input class="form-control" name="cidade" required>
+                    </div>
+                    <div class="col-xs-4">
+                        <label>Estado</label>
+                        <select class="form-control" name="estado">
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Nprte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label>CEP:</label>
+                        <input class="form-control" name="CEP" required>
+                    </div>
+                    <div  class="col-xs-4">
+                        <label>Nome associado a este endereço:</label>
+                        <input class="form-control" name="nome_associado" required>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center" style="margin-top: 40px;">
+                    <div>
+                        <input class="form-control btn-primary" type="submit">
+                    </div>
+                </div>
             </div>
         </form>
     </body>
