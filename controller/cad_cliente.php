@@ -23,6 +23,7 @@
 
     $clienteServer->cadastrarCliente($cpf, $nome, $sexo, $email, $senha, $telefone, $idEnd);
 
-    echo "<p>Olá, ".$nome.". Obrigado por se cadastrar no nosso site!</p>";
-    echo "<a href='../index.html'><input type='button' value='Voltar'></a>";
+    setcookie("username", $nome, time() + (86400 * 30), "/");
+    setcookie("cpf", $cpf, time() + (86400 * 30), "/");
+    header('Location: ../index.php');
 ?>

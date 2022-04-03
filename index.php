@@ -12,6 +12,10 @@
     </head>
     <body>
         <script type="text/javascript" src="index.js"></script>
+        <?php
+            $name = strtok($_COOKIE["username"], " ");
+            echo "<h3>Olá, {$name}!</h3>";
+        ?>
         <div class="row">
             <input type="button" class="btn btn-outline-primary" value="Ver Produtos" onclick="navigate('produtos.php?page=1')">
             <input type="button" class="btn btn-outline-secondary" value="Sair" onclick="navigate('controller/logout.php')">

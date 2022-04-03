@@ -7,3 +7,13 @@ const displayAddress = () => {
     else
     document.getElementById('endereco-alternativo').style.display = "block"
 }
+
+const setProductCookie = (id, elem) => {
+    strId = "prod" +id
+    if(elem.checked){
+        document.cookie = `${strId}=1`
+        return
+    }
+    document.cookie = `${strId}=0`
+    
+}

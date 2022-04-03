@@ -11,6 +11,7 @@
     else{
         while($row = pg_fetch_row($result)){
            setcookie("username", $row[1], time() + (86400 * 30), "/");
+           setcookie("cpf", $row[0], time() + (86400 * 30), "/");
            header('Location: ../index.php');
         }
     }

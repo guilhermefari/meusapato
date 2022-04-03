@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="index.css">
     <title>Produtos</title>
     </head>
+    <?php
+        if(!isset($_COOKIE["username"])){
+            header('Location: login.php');
+        }
+    ?>
     <body>
         <script type="text/javascript" src="index.js"></script>
         <div class="end">
@@ -82,10 +87,19 @@
                         }
                         
                         while($itemEstoque = pg_fetch_row($estoqueItens)){
+                            $id = $itemEstoque[0];
+                            $prodId = 'prod'.$id;
                             $tamanho = $itemEstoque[2];
                             $cor = $itemEstoque[3];
-                            echo "<div class='form-check'>
-                                <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault'>
+                            echo "<div class='form-check'>";
+
+                            if(!isset($_COOKIE[$prodId])) $checkedCookie = false;
+                            else {
+                                $checkedCookie = $_COOKIE[$prodId] ? true : false;
+                            }
+
+                            echo $checkedCookie ? "<input class='form-check-input' type='checkbox' id='flexCheckDefault' onclick='setProductCookie({$id}, this)' checked>": "<input class='form-check-input' type='checkbox' id='flexCheckDefault' onclick='setProductCookie({$id}, this)'>";
+                            echo "
                                 <label class='form-check-label' for='flexCheckDefault'>
                                     Tamanho: {$tamanho}, Cor: {$cor}
                                 </label>
