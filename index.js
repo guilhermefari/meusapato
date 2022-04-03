@@ -2,10 +2,14 @@ const navigate = (location) => document.location=`${location}`
 
 const displayAddress = () => {
     const checkBox = document.getElementById("displayAddress")
-    if(checkBox.checked)
+    if(checkBox.checked){
         document.getElementById('endereco-alternativo').style.display = "none"
-    else
-    document.getElementById('endereco-alternativo').style.display = "block"
+        document.getElementById('endAtual').style.display = "block"
+    }
+    else{
+        document.getElementById('endereco-alternativo').style.display = "block"
+        document.getElementById('endAtual').style.display = "none"
+    }
 }
 
 const setProductCookie = (id, elem) => {

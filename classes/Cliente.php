@@ -3,7 +3,7 @@
 		private $conn;
 		
 		function __construct() {
-			$this->conn = require_once "connection.php";
+			$this->conn = require "connection.php";
 		}
 		
 		function cadastrarCliente($cpf, $nome, $sexo, $email, $senha, $telefone, $idEndereco){ 
@@ -30,6 +30,12 @@
 		function buscarClientes(){
 			$sql = "SELECT * FROM cliente ORDER BY nome_completo";
 			$result = pg_query($this->conn, $sql);
+			return $result;
+		}
+
+		function buscarClientePorCPF($cpf){
+			$sql = "SELECT logradouro, numero, complemento, cidade, estado, cep, nome_associado FROM cliente INNER JOIN endereco ON id_endereco = endereco.id WHERE cpf = $1";
+			$result = pg_query_params($this->conn, $sql, array($cpf));
 			return $result;
 		}
 

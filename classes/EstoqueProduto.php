@@ -36,5 +36,18 @@
 			$result = pg_query_params($this->conn, $sql, array($idProduto));
 			return $result;
 		}
+
+		function buscarMaiorId(){
+			$sql = "SELECT MAX(id) FROM estoque_produto";
+			$result = pg_query($this->conn, $sql);
+			$row = pg_fetch_row ($result);
+			return $row[0];
+		}
+
+		function buscarInformacoes($estoqueId){
+			$sql = "SELECT * FROM estoque_produto INNER JOIN produto ON estoque_produto.id_produto = produto.codigo WHERE id = $1";
+			$result = pg_query_params($this->conn, $sql, array($estoqueId));
+			return $result;
+		}
 	}
 ?>

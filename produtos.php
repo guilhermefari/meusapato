@@ -14,11 +14,11 @@
         <script type="text/javascript" src="index.js"></script>
         <div class="end">
             <input type="button" class='btn btn-primary' value="Voltar ao menu" onclick="navigate('index.php')">
-            <input type="button" class='btn btn-primary' value="Finalizar compra" onclick="navigate('pedido.html')">
+            <input type="button" class='btn btn-primary' value="Finalizar compra" onclick="navigate('pedido.php')">
         </div>
         <div class="container">
             <div class="separate">
-                <h1>Produtos Disponíveis</h1>
+                <h1>Produtos</h1>
                 <p>Para adicionar ao carrinho, marque o item que deseja.</p>
             </div>
             <nav>
