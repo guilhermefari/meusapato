@@ -34,7 +34,7 @@
 		}
 
 		function buscarClientePorCPF($cpf){
-			$sql = "SELECT logradouro, numero, complemento, cidade, estado, cep, nome_associado FROM cliente INNER JOIN endereco ON id_endereco = endereco.id WHERE cpf = $1";
+			$sql = "SELECT id, logradouro, numero, complemento, cidade, estado, cep, nome_associado FROM cliente INNER JOIN endereco ON id_endereco = endereco.id WHERE cpf = $1";
 			$result = pg_query_params($this->conn, $sql, array($cpf));
 			return $result;
 		}

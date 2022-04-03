@@ -28,7 +28,7 @@
 			$sql = "UPDATE estoque_produto SET quantidade = quantidade - $1 WHERE id = $2";
 			$result = pg_query_params($this->conn, $sql, array($quantidade, $id));
 			$row = pg_fetch_row ($result);
-			return $row[0];
+			return true;
 		}
 		
 		function buscarEstoqueProduto($idProduto){
