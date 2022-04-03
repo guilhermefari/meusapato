@@ -1,26 +1,44 @@
 <!DOCTYPE html>
     <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
     <title>Login</title>
     </head>
     <body>
-        <div class="end">
-            <input type="button" value="Voltar ao menu" onclick="navigate('../index.html')">
-        </div>
-        <script type="text/javascript" src="../index.js"></script>
-        <h1>Login</h1>
-        <form class="fields">
-            <div class="item-field">
-                <label>Email</label>
-                <input required>
-            </div>
-            <div class="item-field">
-                <label>Senha</label>
-                <input type="password">
-            </div>
-            <div class="item-field">
-                <input type="submit" onclick="navigate('index.html')">
+        <script type="text/javascript" src="index.js"></script>
+        
+        <form method="post" action="controller/login-admin.php">
+            <div class="centering">
+                <div class="form-group container color-bg">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <h1>Login como administrador</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <label>Email</label>
+                            <input class="form-control" type="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div  class="col-xs-5">
+                            <label>Senha</label>
+                            <input class="form-control" name="senha" type="password" required>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-xs-2">
+                            <input class="form-control btn-primary" type="submit" value="Entrar">
+                        </div>
+                    </div>
+
+                    <a href='../login.php'><p style="margin-top: 30px;">Entrar como cliente</p></a>
+            
+                </div>
             </div>
         </form>
     </body>

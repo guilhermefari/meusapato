@@ -38,6 +38,8 @@
                             <input class="form-control btn btn-primary" type="button" value="Cadastre-se" onclick="navigate('cliente.html')">
                         </div>
                     </div>
+
+                    <a href='admin/login.html'><p style="margin-top: 30px;">Entrar como administrador</p></a>
                     
                     <?php
                         if(isset($_GET['access'])) {

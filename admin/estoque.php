@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="end">
-            <input type="button" value="Voltar ao menu" onclick="navigate('index.html')">
+            <input type="button" value="Voltar ao menu" onclick="navigate('index.php')">
             <input type="button" value="Cadastrar um produto" onclick="navigate('produtos.php')">
         </div>
         <script type="text/javascript" src="../index.js"></script>
