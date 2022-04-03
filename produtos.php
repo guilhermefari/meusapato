@@ -98,12 +98,21 @@
                                 $checkedCookie = $_COOKIE[$prodId] ? true : false;
                             }
 
-                            echo $checkedCookie ? "<input class='form-check-input' type='checkbox' id='flexCheckDefault' onclick='setProductCookie({$id}, this)' checked>": "<input class='form-check-input' type='checkbox' id='flexCheckDefault' onclick='setProductCookie({$id}, this)'>";
+                            $temEstoqueDisponivel = $itemEstoque[4] > 0;
+
+                            echo "<input class='form-check-input' type='checkbox' id='flexCheckDefault' onclick='setProductCookie({$id}, this)' ";
+                            echo $checkedCookie ? "checked" : "";
+                            echo $temEstoqueDisponivel ? "" : " disabled";
+                            echo ">";
+                           
                             echo "
                                 <label class='form-check-label' for='flexCheckDefault'>
                                     Tamanho: {$tamanho}, Cor: {$cor}
                                 </label>
                             </div>";
+                            if(!$temEstoqueDisponivel){
+                                echo "<p>Modelo esgotado!</p>";
+                            }
                         }
                         echo "</div>";
                     }
