@@ -1,24 +1,33 @@
 <!DOCTYPE html>
     <head>
     <meta charset="UTF-8"/>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="../index.css">
     <title>Cadastro de Produto</title>
     </head>
     <body>
         <div class="end">
-            <input type="button" value="Voltar ao menu" onclick="navigate('index.php')">
+            <input type="button" class='btn btn-primary' value="Voltar ao menu" onclick="navigate('index.php')">
         </div>
         <script type="text/javascript" src="../index.js"></script>
-        <h1>Cadastro de Marca</h1>
-        <p>Preencha os campos abaixo:</p>
-        <form action="controller/cad_marca.php" method="post" class="fields">
-            <div class="item-field">
-                <label>Nome da marca</label>
-                <input name='marca' required>
-            </div>
-            <div class="item-field">
-                <input type="submit">
-            </div>
-        </form>
+        <div class="form-group container color-bg">
+
+            <h1>Cadastro de Marca</h1>
+            <p>Preencha os campos abaixo:</p>
+            <form action="controller/cad_marca.php" method="post" class="form-group container color-bg">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label>Nome da marca</label>
+                        <input class="form-control" name='marca' required>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 40px;">
+                    <div class="col-xs-2" >
+                        <input class="form-control btn-primary" type="submit">
+                    </div>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
